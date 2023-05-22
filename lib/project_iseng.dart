@@ -86,8 +86,10 @@ Future<void> showAlertDialog1(context){
         onPressed: (){
           isShow=true;
         // Navigator.pop(context);
-        canLaunchUrlString(link.asUri().toString());
-        print(link.asUri().toString());
+        launchUrlString('${link.asUri()}').then(
+          Navigator.of(context).pop
+        );
+        print('${link.asUri()}');
       }, child: const Text('Oke'))
     ],
    ) );
